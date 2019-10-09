@@ -53,7 +53,7 @@ services:
         MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
       networks:
         diy-network:
-          ipv4_address: 172.19.19.166
+          ipv4_address: ${MYSQL_SERVICE_IP}
 
   ### Redis container #########################################
 
@@ -68,7 +68,7 @@ services:
       privileged: true
       networks:
         diy-network:
-          ipv4_address: 172.19.19.155
+          ipv4_address: ${REDIS_SERVICE_IP}
 
   ### MongoDB container #########################################
 
@@ -82,7 +82,7 @@ services:
     privileged: true
     networks:
         diy-network:
-            ipv4_address: 172.19.19.144
+            ipv4_address: ${MONGODB_SERVICE_IP}
 
 networks:
   net-php:
