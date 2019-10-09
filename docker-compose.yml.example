@@ -35,8 +35,7 @@ services:
       privileged: true
       networks:
         - net-php
-        - net-mysql
-        - net-redis
+        - diy-network
 
   ### Mysql container #########################################
 
@@ -53,7 +52,8 @@ services:
       environment:
         MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
       networks:
-        - net-mysql
+        diy-network:
+          ipv4_address: 172.19.19.166
 
   ### Redis container #########################################
 
@@ -67,7 +67,8 @@ services:
       restart: always
       privileged: true
       networks:
-        - net-redis
+        diy-network:
+          ipv4_address: 172.19.19.155
 
   ### MongoDB container #########################################
 
@@ -80,13 +81,16 @@ services:
     restart: always
     privileged: true
     networks:
-      - net-mongodb
+        diy-network:
+            ipv4_address: 172.19.19.144
 
 networks:
   net-php:
-  net-mysql:
-  net-redis:
-  net-mongodb:
+  diy-network:
+      driver: bridge
+      ipam:
+         config:
+         - subnet: ${GLOBAL_NETWORK_SUBNET}
 
 volumes:
   mongo-data:
