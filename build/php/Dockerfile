@@ -13,7 +13,7 @@ ENV LC_ALL=C.UTF-8
 RUN ln -snf /usr/share/zoneinfo/$TIME_ZONE /etc/localtime ; \
   echo $TIME_ZONE > /etc/timezone ;
   
-RUN mv /home/resource/phpunit-6.5.3.phar /usr/local/bin/phpunit ; \
+RUN mv /home/resource/phpunit.phar /usr/local/bin/phpunit ; \
   chmod 755 /usr/local/bin/phpunit ;
 
 RUN mv /home/resource/composer.phar /usr/local/bin/composer ; \
