@@ -9,3 +9,6 @@
 sql-mode="STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION"
 character-set-server=utf8
 explicit_defaults_for_timestamp=true
+slow_query_log=ON
+slow_query_log_file=/var/log/mysql/slow-mysql-query.log
+long_query_time=1
