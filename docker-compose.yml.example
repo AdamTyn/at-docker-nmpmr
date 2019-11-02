@@ -10,9 +10,9 @@ services:
         - "${HTTPS_PORT}:443"
       volumes:
         - ${PROJECT_FOLDER}:/etc/nginx/html:rw
-        - ./work/components/nginx/config/nginx.conf:/etc/nginx/nginx.conf:ro
-        - ./work/components/nginx/config/conf.d:/etc/nginx/conf.d:ro
-        - ./work/components/nginx/log:/var/log/nginx:rw
+        - ./components/nginx/config/nginx.conf:/etc/nginx/nginx.conf:ro
+        - ./components/nginx/config/conf.d:/etc/nginx/conf.d:ro
+        - ./components/nginx/log:/var/log/nginx:rw
       restart: always
       privileged: true
       networks:
@@ -28,9 +28,9 @@ services:
           CHANGE_SOURCE: ${GLOBAL_CHANGE_SOURCE}
       volumes:
         - ${PROJECT_FOLDER}:/etc/nginx/html:rw
-        - ./work/components/php/config/php.ini:/usr/local/etc/php/php.ini:ro
-        - ./work/components/php/config/php-fpm.conf:/usr/local/etc/php-fpm.d/www.conf:rw
-        - ./work/components/php/log:/var/log:rw
+        - ./components/php/config/php.ini:/usr/local/etc/php/php.ini:ro
+        - ./components/php/config/php-fpm.conf:/usr/local/etc/php-fpm.d/www.conf:rw
+        - ./components/php/log:/var/log:rw
       restart: always
       privileged: true
       networks:
@@ -44,9 +44,9 @@ services:
       ports:
         - "${MYSQL_PORT}:3306"
       volumes:
-        - ./work/components/mysql/data:/var/lib/mysql:rw
-        - ./work/components/mysql/config/mysql.cnf:/etc/mysql/conf.d/mysql.cnf:ro
-        - ./work/components/mysql/log:/var/log/mysql:rw
+        - ./components/mysql/data:/var/lib/mysql:rw
+        - ./components/mysql/config/mysql.cnf:/etc/mysql/conf.d/mysql.cnf:ro
+        - ./components/mysql/log:/var/log/mysql:rw
       restart: always
       privileged: true
       environment:
@@ -62,8 +62,8 @@ services:
       ports:
         - "${REDIS_PORT}:6379"
       volumes:
-        - ./work/components/redis/config/redis.conf:/usr/local/etc/redis/redis.conf:ro
-        - ./work/components/redis/log/redis.log:/var/log/redis/redis.log:rw
+        - ./components/redis/config/redis.conf:/usr/local/etc/redis/redis.conf:ro
+        - ./components/redis/log/redis.log:/var/log/redis/redis.log:rw
       restart: always
       privileged: true
       networks:
