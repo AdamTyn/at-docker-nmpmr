@@ -53,6 +53,7 @@ RUN docker-php-ext-configure gd \
   --with-jpeg-dir=/usr/include/ ; \
   docker-php-ext-install -j$(nproc) gd pdo_mysql mysqli soap pcntl bcmath; \
   pecl install /home/resource/imagick-3.4.4.tgz && docker-php-ext-enable imagick ; \
+  pecl install /home/resource/xdebug-2.9.4.tgz && docker-php-ext-enable xdebug ; \
   pecl install /home/resource/rdkafka-3.1.2.tgz && docker-php-ext-enable rdkafka ; \
   pecl install /home/resource/event-2.5.3.tgz && docker-php-ext-enable event ; \
   pecl install /home/resource/nsq-3.4.3.tgz && docker-php-ext-enable nsq ; \
