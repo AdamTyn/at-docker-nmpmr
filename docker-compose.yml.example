@@ -16,11 +16,11 @@ services:
       restart: always
       privileged: true
       networks:
-        - net-php
+        - diy-network
 
   ### PHP container #########################################
 
-  php:
+  php74:
       build:
         context: ./build/php
         args:
@@ -34,7 +34,6 @@ services:
       restart: always
       privileged: true
       networks:
-        - net-php
         - diy-network
 
   ### Mysql container #########################################
@@ -85,7 +84,6 @@ services:
             ipv4_address: ${MONGODB_SERVICE_IP}
 
 networks:
-  net-php:
   diy-network:
       driver: bridge
       ipam:
