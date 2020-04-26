@@ -24,7 +24,7 @@ RUN mv /home/resource/composer.phar /usr/local/bin/composer ; \
   rm -rf /etc/apt/sources.list.d/buster.list ; \
   if [ $CHANGE_SOURCE = true ] ; then \
   mv /etc/apt/sources.list /etc/apt/source.list.bak ; \
-  mv /home/resource/tsinghua.list /etc/apt/sources.list ; \
+  mv /home/resource/163.list /etc/apt/sources.list ; \
   composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/ ; \
   fi ;
 
