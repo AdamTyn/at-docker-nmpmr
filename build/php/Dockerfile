@@ -15,10 +15,10 @@ ENV LC_ALL=C.UTF-8
 RUN ln -snf /usr/share/zoneinfo/$TIME_ZONE /etc/localtime ; \
   echo $TIME_ZONE > /etc/timezone ;
   
-RUN mv /home/resource/phpunit-9.1.3.phar /usr/local/bin/phpunit ; \
+RUN mv /home/resource/phpunit-9.2.3.phar /usr/local/bin/phpunit ; \
   chmod 755 /usr/local/bin/phpunit ;
 
-RUN mv /home/resource/composer-1.10.5.phar /usr/local/bin/composer ; \
+RUN mv /home/resource/composer-1.10.7.phar /usr/local/bin/composer ; \
   chmod 755 /usr/local/bin/composer ; \
   \
   rm -rf /etc/apt/sources.list.d/buster.list ; \
@@ -53,15 +53,15 @@ RUN docker-php-ext-configure gd \
   --with-jpeg-dir=/usr/include/ ; \
   docker-php-ext-install -j$(nproc) gd pdo_mysql mysqli soap pcntl bcmath; \
   pecl install /home/resource/imagick-3.4.4.tgz && docker-php-ext-enable imagick ; \
-  pecl install /home/resource/xdebug-2.9.4.tgz && docker-php-ext-enable xdebug ; \
+  pecl install /home/resource/xdebug-2.9.6.tgz && docker-php-ext-enable xdebug ; \
   pecl install /home/resource/rdkafka-4.0.3.tgz && docker-php-ext-enable rdkafka ; \
-  pecl install /home/resource/event-2.5.4.tgz && docker-php-ext-enable event ; \
+  pecl install /home/resource/event-2.5.6.tgz && docker-php-ext-enable event ; \
   pecl install /home/resource/nsq-3.5.0.tgz && docker-php-ext-enable nsq ; \
-  pecl install /home/resource/redis-5.2.1.tgz && docker-php-ext-enable redis ; \
-  pecl install /home/resource/swoole-4.4.17.tgz && docker-php-ext-enable swoole ; \
+  pecl install /home/resource/redis-5.2.2.tgz && docker-php-ext-enable redis ; \
+  pecl install /home/resource/swoole-4.5.2.tgz && docker-php-ext-enable swoole ; \
   pecl install /home/resource/mcrypt-1.0.3.tgz && docker-php-ext-enable mcrypt ; \
   pecl install /home/resource/mongodb-1.7.4.tgz && docker-php-ext-enable mongodb ; \
-  pecl install /home/resource/zip-1.18.2.tgz && docker-php-ext-enable zip ;
+  pecl install /home/resource/zip-1.19.0.tgz && docker-php-ext-enable zip ;
 
 RUN rm -rf /var/lib/apt/lists/* ; \
   apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false ; \
