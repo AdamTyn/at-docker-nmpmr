@@ -61,6 +61,7 @@ RUN docker-php-ext-configure gd \
   pecl install /home/resource/swoole-4.5.2.tgz && docker-php-ext-enable swoole ; \
   pecl install /home/resource/mcrypt-1.0.3.tgz && docker-php-ext-enable mcrypt ; \
   pecl install /home/resource/mongodb-1.7.4.tgz && docker-php-ext-enable mongodb ; \
+  pecl install /home/resource/xlswriter-1.3.6.tgz && docker-php-ext-enable xlswriter ; \
   pecl install /home/resource/zip-1.19.0.tgz && docker-php-ext-enable zip ;
 
 RUN rm -rf /var/lib/apt/lists/* ; \
