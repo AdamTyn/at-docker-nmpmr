@@ -16,7 +16,7 @@ services:
       restart: always
       privileged: true
       networks:
-        - net-php
+        - diy-network
 
   ### PHP container #########################################
 
@@ -34,7 +34,6 @@ services:
       restart: always
       privileged: true
       networks:
-        - net-php
         - diy-network
 
   ### Mysql container #########################################
@@ -77,7 +76,7 @@ services:
     ports:
       - "${MONGODB_PORT}:27017"
     volumes:
-      - mongo-data:/data/db
+      - ./components/mongodb/data:/data/db:rw
     restart: always
     privileged: true
     networks:
@@ -85,12 +84,8 @@ services:
             ipv4_address: ${MONGODB_SERVICE_IP}
 
 networks:
-  net-php:
   diy-network:
       driver: bridge
       ipam:
          config:
          - subnet: ${GLOBAL_NETWORK_SUBNET}
-
-volumes:
-  mongo-data:
