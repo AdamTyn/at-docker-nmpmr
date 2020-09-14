@@ -20,3 +20,13 @@
 
 5. [2020-06-22] 新增 `php-xlswriter` 扩展
 6. [2020-07-14] 针对Linux和MacOS轻微调整，这些系统下的用户可以切换到 *php72-mac* 分支
+7. [2020-09-14] 更新 `php扩展`，升级 `composer` 和 `phpunit` 到最新版本
+
+|   Upgrade List   |
+| :--------------: |
+| composer-1.10.13 |
+|  phpunit-8.5.8   |
+|   swoole-4.5.3   |
+|   event-2.5.7    |
+|   redis-5.3.1    |
+|  mongodb-1.8.0   |
