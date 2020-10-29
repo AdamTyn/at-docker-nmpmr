@@ -30,3 +30,16 @@
 |   event-2.5.7    |
 |   redis-5.3.1    |
 |  mongodb-1.8.0   |
+
+8. [2020-10-29] 更新 `php扩展`，升级 `composer` 到最新版本
+
+|  Upgrade List  |
+| :------------: |
+| composer-2.0.2 |
+|  swoole-4.5.5  |
+|  redis-5.3.2   |
+| mongodb-1.8.1  |
+|   zip-1.19.1   |
+|  xdebug-2.9.8  |
+| rdkafka-4.0.4  |
+
