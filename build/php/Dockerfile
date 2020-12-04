@@ -1,4 +1,4 @@
-FROM php:7.4.5-fpm
+FROM php:7.4.13-fpm
 
 COPY resource /home/resource
 
