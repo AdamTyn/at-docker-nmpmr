@@ -37,18 +37,18 @@
 
 6. [2020-06-17] 更新 `php扩展`，升级 `composer` 和 `phpunit` 到最新版本
 
-|  Upgrade List   |
-| :-------------: |
-| composer-1.10.7 |
-|  phpunit-9.2.3  |
-|  swoole-4.5.2   |
-|  xdebug-2.9.6   |
-|   redis-5.2.2   |
-|  rdkafka-4.0.3  |
-|    nsq-3.5.0    |
-|  mongodb-1.7.4  |
-|   event-2.5.6   |
-|   zip-1.19.0    |
+   |  Upgrade List   |
+   | :-------------: |
+   | composer-1.10.7 |
+   |  phpunit-9.2.3  |
+   |  swoole-4.5.2   |
+   |  xdebug-2.9.6   |
+   |   redis-5.2.2   |
+   |  rdkafka-4.0.3  |
+   |    nsq-3.5.0    |
+   |  mongodb-1.7.4  |
+   |   event-2.5.6   |
+   |   zip-1.19.0    |
 
 7. [2020-04-25] 新增 `php7.4` 版本，切换分支到 *php74* ，重新编译容器即可
 
