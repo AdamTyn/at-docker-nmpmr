@@ -56,7 +56,6 @@ RUN docker-php-ext-configure gd \
 RUN docker-php-ext-install -j$(nproc) gd pdo_mysql mysqli soap pcntl bcmath bz2 sockets; \
   pecl install /home/resource/imagick-3.4.4.tgz && docker-php-ext-enable imagick ; \
   pecl install /home/resource/xdebug-3.0.0.tgz && docker-php-ext-enable xdebug ; \
-  pecl install /home/resource/nsq-3.5.0.tgz && docker-php-ext-enable nsq ; \
   pecl install /home/resource/redis-5.3.2.tgz && docker-php-ext-enable redis ; \
   pecl install /home/resource/swoole-4.5.9.tgz && docker-php-ext-enable swoole ; \
   pecl install /home/resource/mcrypt-1.0.4.tgz && docker-php-ext-enable mcrypt ; \
