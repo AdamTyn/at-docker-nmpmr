@@ -78,7 +78,7 @@ services:
     ports:
       - "${MONGODB_PORT}:27017"
     volumes:
-      - mongo-data:/data/db
+      - ./components/mongodb/data:/data/db
     restart: always
     privileged: true
     networks:
@@ -91,6 +91,3 @@ networks:
       ipam:
          config:
          - subnet: ${GLOBAL_NETWORK_SUBNET}
-
-volumes:
-  mongo-data:
