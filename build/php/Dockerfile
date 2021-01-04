@@ -55,12 +55,12 @@ RUN docker-php-ext-configure gd \
 
 RUN docker-php-ext-install -j$(nproc) gd pdo_mysql mysqli soap pcntl bcmath bz2 sockets; \
   pecl install /home/resource/imagick-3.4.4.tgz && docker-php-ext-enable imagick ; \
-  pecl install /home/resource/xdebug-3.0.0.tgz && docker-php-ext-enable xdebug ; \
+  pecl install /home/resource/xdebug-3.0.1.tgz && docker-php-ext-enable xdebug ; \
   pecl install /home/resource/redis-5.3.2.tgz && docker-php-ext-enable redis ; \
-  pecl install /home/resource/swoole-4.5.9.tgz && docker-php-ext-enable swoole ; \
+  pecl install /home/resource/swoole-4.5.10.tgz && docker-php-ext-enable swoole ; \
   pecl install /home/resource/mcrypt-1.0.4.tgz && docker-php-ext-enable mcrypt ; \
   pecl install /home/resource/mongodb-1.9.0.tgz && docker-php-ext-enable mongodb ; \
-  pecl install /home/resource/xlswriter-1.3.6.tgz && docker-php-ext-enable xlswriter ; \
+  pecl install /home/resource/xlswriter-1.3.7.tgz && docker-php-ext-enable xlswriter ; \
   pecl install /home/resource/zip-1.19.2.tgz && docker-php-ext-enable zip ;
 
 RUN rm -rf /var/lib/apt/lists/* ; \
