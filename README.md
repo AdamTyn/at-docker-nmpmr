@@ -1,5 +1,15 @@
 ### AT-Docker/nmpmr
 
+- [2021-05-04] 更新 `php扩展`，升级 `composer` 到最新版本
+
+   |  Upgrade List   |
+   | :-------------: |
+   | composer-2.0.13  |
+   |  redis-5.3.4   |
+   |  swoole-4.6.6   |
+   |  xdebug-3.0.4   |
+   |  mongodb-1.9.1   |
+
 - [2021-03-11] 移除 php-zip 扩展
 
 - [2021-03-10] 更新 `php扩展`，升级 `composer` 到最新版本
