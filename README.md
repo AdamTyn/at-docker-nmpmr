@@ -1,5 +1,14 @@
 ### AT-Docker/nmpmr
 
+- [2021-10-20] 更新 `php扩展`，升级 `composer` 和 `phpunit` 到最新版本
+
+   |  Upgrade List   |
+   | :-------------: |
+   | composer-2.1.9 |
+   | phpunit-9.5.9 |
+   | xdebug-3.1.1 |
+   | xlswriter-1.5.0 |
+
 - [2021-07-26] 更新 `php扩展`，升级 `composer` 到最新版本，重新加回 **php-zip** 扩展
 
    |  Upgrade List   |
