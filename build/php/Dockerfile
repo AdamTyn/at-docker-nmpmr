@@ -15,10 +15,10 @@ ENV LC_ALL=C.UTF-8
 RUN ln -snf /usr/share/zoneinfo/$TIME_ZONE /etc/localtime ; \
   echo $TIME_ZONE > /etc/timezone ;
   
-RUN mv /home/resource/phpunit-9.3.9.phar /usr/local/bin/phpunit ; \
+RUN mv /home/resource/phpunit-9.5.9.phar /usr/local/bin/phpunit ; \
   chmod 755 /usr/local/bin/phpunit ;
 
-RUN mv /home/resource/composer-2.1.5.phar /usr/local/bin/composer ; \
+RUN mv /home/resource/composer-2.1.9.phar /usr/local/bin/composer ; \
   chmod 755 /usr/local/bin/composer ; \
   \
   rm -rf /etc/apt/sources.list.d/buster.list ; \
@@ -34,10 +34,10 @@ RUN apt-get clean \
 RUN apt-get install -y --allow-remove-essential --no-install-recommends libmagickwand-dev \
   procps \
   git \
-  libtool \
-  libzip-dev \
   zip \
   unzip \
+  libtool \
+  libzip-dev \
   libtinfo5 \
   libpq-dev \
   libpng-dev \
@@ -53,14 +53,15 @@ RUN docker-php-ext-configure gd \
   --with-jpeg=/usr/include \
   --with-freetype=/usr/include/freetype2 ;
 
-RUN docker-php-ext-install -j$(nproc) gd pdo_mysql mysqli soap pcntl bcmath bz2 zip sockets; \
-  pecl install /home/resource/imagick-3.4.4.tgz && docker-php-ext-enable imagick ; \
-  pecl install /home/resource/xdebug-3.0.4.tgz && docker-php-ext-enable xdebug ; \
+RUN docker-php-ext-install -j$(nproc) gd pdo_mysql mysqli soap pcntl bcmath bz2 zip sockets;
+
+RUN pecl install /home/resource/imagick-3.4.4.tgz && docker-php-ext-enable imagick ; \
+  pecl install /home/resource/mcrypt-1.0.4.tgz && docker-php-ext-enable mcrypt ; \
+  pecl install /home/resource/xdebug-3.1.1.tgz && docker-php-ext-enable xdebug ; \
   pecl install /home/resource/redis-5.3.4.tgz && docker-php-ext-enable redis ; \
   pecl install /home/resource/swoole-4.7.0.tgz && docker-php-ext-enable swoole ; \
-  pecl install /home/resource/mcrypt-1.0.4.tgz && docker-php-ext-enable mcrypt ; \
   pecl install /home/resource/mongodb-1.10.0.tgz && docker-php-ext-enable mongodb ; \
-  pecl install /home/resource/xlswriter-1.4.0.tgz && docker-php-ext-enable xlswriter ;
+  pecl install /home/resource/xlswriter-1.5.0.tgz && docker-php-ext-enable xlswriter ;
 
 RUN rm -rf /var/lib/apt/lists/* ; \
   apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false ; \
