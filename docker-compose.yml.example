@@ -20,7 +20,7 @@ services:
 
   ### PHP container #########################################
 
-  php74:
+  php:
       build:
         context: ./build/php
         args:
