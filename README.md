@@ -1,5 +1,7 @@
 ### AT-Docker/nmpmr
 
+- [2022-01-19] 批量替换 `CRLF` 为 `LF`，移除 `composer` 的华为源 `huawei.list` 文件
+
 - [2021-05-04] 更新 `php扩展`，升级 `composer` 到最新版本
 
    |  Upgrade List   |
