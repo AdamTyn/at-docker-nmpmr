@@ -1,5 +1,14 @@
 ### AT-Docker/nmpmr
 
+- [2022-02-16] 更新 `php扩展`，升级 `composer` 到最新版本
+
+   |  Upgrade List   |
+   | :-------------: |
+   | composer-2.2.6 |
+   | redis-5.3.7 |
+   | xdebug-3.1.3 |
+   | imagick-3.7.0 |
+
 - [2022-01-19] 更新 `php扩展`，升级 `composer` 到最新版本
 
    |  Upgrade List   |
@@ -8,7 +17,7 @@
    | redis-5.3.6 |
    | xdebug-3.1.2 |
    | xlswriter-1.5.1 |
-   | swoole-3.8.6 |
+   | swoole-4.8.6 |
    | mongodb-1.12.0 |
 
 - [2021-10-20] 更新 `php扩展`，升级 `composer` 和 `phpunit` 到最新版本
