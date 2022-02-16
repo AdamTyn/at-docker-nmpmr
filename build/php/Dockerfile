@@ -18,7 +18,7 @@ RUN ln -snf /usr/share/zoneinfo/$TIME_ZONE /etc/localtime ; \
 RUN mv /home/resource/phpunit-9.5.9.phar /usr/local/bin/phpunit ; \
   chmod 755 /usr/local/bin/phpunit ;
 
-RUN mv /home/resource/composer-2.2.4.phar /usr/local/bin/composer ; \
+RUN mv /home/resource/composer-2.2.6.phar /usr/local/bin/composer ; \
   chmod 755 /usr/local/bin/composer ; \
   \
   rm -rf /etc/apt/sources.list.d/buster.list ; \
@@ -55,10 +55,10 @@ RUN docker-php-ext-configure gd \
 
 RUN docker-php-ext-install -j$(nproc) gd pdo_mysql mysqli soap pcntl bcmath bz2 zip sockets;
 
-RUN pecl install /home/resource/imagick-3.4.4.tgz && docker-php-ext-enable imagick ; \
+RUN pecl install /home/resource/imagick-3.7.0.tgz && docker-php-ext-enable imagick ; \
   pecl install /home/resource/mcrypt-1.0.4.tgz && docker-php-ext-enable mcrypt ; \
-  pecl install /home/resource/xdebug-3.1.2.tgz && docker-php-ext-enable xdebug ; \
-  pecl install /home/resource/redis-5.3.6.tgz && docker-php-ext-enable redis ; \
+  pecl install /home/resource/xdebug-3.1.3.tgz && docker-php-ext-enable xdebug ; \
+  pecl install /home/resource/redis-5.3.7.tgz && docker-php-ext-enable redis ; \
   pecl install /home/resource/swoole-4.8.6.tgz && docker-php-ext-enable swoole ; \
   pecl install /home/resource/mongodb-1.12.0.tgz && docker-php-ext-enable mongodb ; \
   pecl install /home/resource/xlswriter-1.5.1.tgz && docker-php-ext-enable xlswriter ;
