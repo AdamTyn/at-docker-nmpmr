@@ -1,4 +1,4 @@
-FROM php:7.4.13-fpm
+FROM php:7.4-fpm
 
 COPY resource /home/resource
 
@@ -24,7 +24,7 @@ RUN mv /home/resource/composer-2.2.6.phar /usr/local/bin/composer ; \
   rm -rf /etc/apt/sources.list.d/buster.list ; \
   if [ $CHANGE_SOURCE = true ] ; then \
   mv /etc/apt/sources.list /etc/apt/source.list.bak ; \
-  mv /home/resource/163.list /etc/apt/sources.list ; \
+  mv /home/resource/sources.list /etc/apt/sources.list ; \
   composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/ ; \
   fi ;
 

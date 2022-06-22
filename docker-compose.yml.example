@@ -36,23 +36,23 @@ services:
       networks:
         - diy-network
 
-  ### Mysql container #########################################
+  ### MariaDB container #########################################
 
-  mysql:
-      image: mysql:5.7
+  mariadb:
+      image: mariadb:10.4.25
       ports:
-        - "${MYSQL_PORT}:3306"
+        - "${MARIADB_PORT}:3306"
       volumes:
-        - ./components/mysql/data:/var/lib/mysql:rw
-        - ./components/mysql/config/mysql.cnf:/etc/mysql/conf.d/mysql.cnf:ro
-        - ./components/mysql/log:/var/log/mysql:rw
+        - ./components/mariadb/data:/var/lib/mariadb:rw
+        - ./components/mariadb/config/mariadb.cnf:/etc/mariadb/conf.d/mariadb.cnf:ro
+        - ./components/mariadb/log:/var/log/mariadb:rw
       restart: always
       privileged: true
       environment:
-        MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
+        MARIADB_ROOT_PASSWORD: ${MARIADB_PASSWORD}
       networks:
         diy-network:
-          ipv4_address: ${MYSQL_SERVICE_IP}
+          ipv4_address: ${MARIADB_SERVICE_IP}
 
   ### Redis container #########################################
 
