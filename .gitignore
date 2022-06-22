@@ -1,4 +1,4 @@
 /.idea
 /.env
-/.tar
+/*.tar
 /docker-compose.yml

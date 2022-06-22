@@ -1,5 +1,7 @@
 ### AT-Docker/nmpmr
 
+- [2022-06-22] 针对M1芯片的MacOS轻微调整，这些用户可以切换到 *php74-m1-mac* 分支
+
 - [2022-02-16] 更新 `php扩展`，升级 `composer` 到最新版本
 
    |  Upgrade List   |
